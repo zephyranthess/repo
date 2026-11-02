@@ -1,0 +1,97 @@
+# iOS 18.6.2
+ok        required carplay-list    FBSApplicationLibraryConfiguration -setInstalledApplicationFilter:
+ok        optional carplay-list    FBSApplicationLibraryConfiguration -setApplicationIdentityFilter:
+ok        required carplay-list    DBApplicationInfo -carPlayDeclaration
+ok        required carplay-list    DBApplicationInfo ivar _carPlayDeclaration
+ok        optional carplay-list    DBApplicationInfo -isHidden
+ok        optional carplay-list    DBApplicationInfo -isFirstParty
+ok        required carplay-list    CRCarPlayAppDeclaration -setSupportsTemplates:
+ok        required carplay-list    CRCarPlayAppDeclaration -setSupportsMaps:
+ok        required carplay-list    CRCarPlayAppDeclaration -setBundleIdentifier:
+ok        optional carplay-list    CRCarPlayAppDeclaration -setBundlePath:
+ok        required carplay-list    CRCarPlayAppPolicyEvaluator -effectivePolicyForAppDeclaration:
+ok        optional carplay-list    CRCarPlayAppPolicyEvaluator -effectivePolicyForAppDeclaration:inVehicleWithCertificateSerial:
+ok        required carplay-list    CRCarPlayAppPolicy -setCarPlaySupported:
+ok        required carplay-list    CRCarPlayAppPolicy -setCanDisplayOnCarScreen:
+ok        optional carplay-list    CRCarPlayAppPolicy -setCarPlayCapable:
+ok        optional carplay-list    CRCarPlayAppPolicy -setLaunchUsingTemplateUI:
+ok        optional carplay-list    CRCarPlayAppPolicy -setLaunchUsingMusicUIService:
+ok        optional carplay-list    CRCarPlayAppPolicy -setLaunchUsingSiri:
+ok        required carplay-list    SBLeafIcon -applicationBundleID
+ok        required carplay-launch  DBDashboard -handleEvent:
+ok        optional carplay-launch  DBDashboard -_handleOpenApplicationEvent:
+ok        required carplay-launch  DBEvent -context
+ok        required carplay-launch  DBApplicationLaunchInfo
+ok        required carplay-launch  DBApplicationLaunchInfo -application
+ok        optional carplay-debug   DBApplicationController +sharedInstance
+ok        optional carplay-debug   DBApplicationController -allApplications
+ok        optional carplay-debug   DBApplication -appPolicy
+ok        required car-display     AVExternalDevice +currentCarPlayExternalDevice
+ok        required car-display     AVExternalDevice -screenIDs
+ok        required car-display     CADisplay +displays
+ok        required car-display     CADisplay -uniqueId
+ok        required car-display     UIRootSceneWindow -initWithDisplayConfiguration:
+ok        required hosting         SBApplicationController +sharedInstance
+ok        required hosting         SBApplicationController -applicationWithBundleIdentifier:
+ok        required hosting         SpringBoard -embeddedDisplayWindowScene
+ok        required hosting         SBSceneManager -fetchOrCreateApplicationSceneHandleForRequest:
+ok        required hosting         SBApplicationSceneHandleRequest +defaultRequestForApplication:sceneIdentity:displayIdentity:
+ok        required hosting         SBDeviceApplicationSceneEntity -initWithApplicationSceneHandle:
+ok        required hosting         SBAppViewController -initWithIdentifier:andApplicationSceneEntity:
+ok        required hosting         SBAppViewController -_createSceneUpdateTransactionForApplicationSceneEntity:deliveringActions:
+ok        required hosting         SBAppViewController -_createSceneViewController
+ok        required hosting         SBAppViewController -appView
+ok        required hosting         SBAppViewController -_setCurrentMode:
+ok        required hosting         SBAppViewController -invalidate
+ok        optional hosting         SBAppViewController -setIgnoresOcclusions:
+ok        optional hosting         SBAppViewController -setContentReferenceSize:withContentOrientation:andContainerOrientation:
+ok        required hosting         SBAppViewController ivar _currentMode
+ok        optional hosting         SBAppViewController ivar _activationSettings
+ok        optional hosting         SBAppViewController ivar _activeTransitions
+ok        optional hosting         SBActivationSettings -clearActivationSettings
+ok        required hosting         BSTransaction -setCompletionBlock:
+ok        required hosting         BSTransaction -begin
+ok        required hosting         SBApplicationSceneView +defaultDisplayModeAnimationFactory
+ok        required hosting         SBSceneView -setDisplayMode:animationFactory:completion:
+ok        required hosting         SBSceneHandle -sceneIdentifier
+ok        required hosting         SBSceneHandle -sceneIfExists
+ok        optional hosting         FBSceneMonitor -initWithSceneID:
+ok        optional hosting         FBSceneMonitor -setDelegate:
+ok        required hosting         SBApplication -info
+ok        required hosting         FBSBundleInfo -bundleURL
+ok        required scene-size      FBScene -updateSettingsWithBlock:
+ok        required scene-size      FBScene -settings
+ok        optional keep-alive      FBScene -clientProcess
+ok        optional keep-alive      FBScene -updateSettings:withTransitionContext:completion:
+ok        optional keep-alive      FBProcess -bundleIdentifier
+ok        optional keep-alive      symbol BKSDisplayServicesSetScreenBlanked
+ok        required ipad-layout     FBProcessManager +sharedInstance
+ok        required ipad-layout     FBProcessManager -processesForBundleIdentifier:
+ok        required ipad-layout     FBProcess -pid
+ok        required springboard     SpringBoard -applicationDidFinishLaunching:
+ok        optional springboard     SpringBoard -_accessibilityFrontMostApplication
+ok        optional springboard     SpringBoard -isLocked
+ok        optional test-helpers    symbol _UICreateScreenUIImage
+ok        optional test-helpers    symbol BKSHIDServicesGetBacklightFactor
+ok        optional test-helpers    SBBacklightController -turnOnScreenFullyWithBacklightSource:
+ok        optional test-helpers    SBLockScreenManager -unlockUIFromSource:withOptions:
+ok        optional app-side        UIWindow -_setRotatableViewOrientation:duration:force:
+ok        optional app-side        UIWindowScene -traitOverrides
+ok        optional linefix         UIWindow -_ignoresHitTest
+ok        optional linefix         UIWindow -_shouldCreateContextAsSecure
+ok        optional speedboost      symbol _AXSEnhanceBackgroundContrastEnabled
+ok        optional speedboost      symbol _AXSSetEnhanceBackgroundContrastEnabled
+ok        optional speedboost      symbol _AXSReduceMotionEnabled
+ok        optional speedboost      symbol _AXSSetReduceMotionEnabled
+ok        required xstweaks        PSListController -loadSpecifiersFromPlistName:target:bundle:
+ok        optional xstweaks        LSApplicationWorkspace +defaultWorkspace
+ok        optional xstweaks        LSApplicationWorkspace -allInstalledApplications
+ok        optional xstweaks        UIImage +_applicationIconImageForBundleIdentifier:format:scale:
+ok        required carplay-list    loadinfo via record, proxy
+ok        required carplay-list    iconmodel via objc
+ok        required carplay-launch  launchapp via dbapplication, dbappinfo
+ok        required car-display     dispconf via old, new, uikit
+ok        required hosting         scenemgr via coordinator
+ok        required hosting         displayid via manager
+ok        required hosting         sceneid via manager
+ok        required keep-alive      lock via manager

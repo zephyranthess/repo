@@ -1,0 +1,52 @@
+#!/var/jb/bin/sh
+# Turns heavy background services off or back on. Must run as root.
+# The choice is saved by launchd, so it survives reboots.
+
+LAUNCHCTL=/var/jb/usr/bin/launchctl
+SERVICES="com.apple.photoanalysisd
+com.apple.mediaanalysisd
+com.apple.mobile.softwareupdated
+com.apple.softwareupdateservicesd
+com.apple.analyticsd
+com.apple.geoanalyticsd
+com.apple.wifianalyticsd
+com.apple.inputanalyticsd
+com.apple.tipsd"
+
+if [ "$(id -u)" != "0" ]; then
+	echo "Run as root: sudo speedboost-services $*"
+	exit 1
+fi
+
+case "$1" in
+	disable)
+		for s in $SERVICES; do
+			$LAUNCHCTL disable "system/$s" 2>/dev/null
+			$LAUNCHCTL bootout "system/$s" 2>/dev/null
+			echo "off: $s"
+		done
+		;;
+	enable)
+		for s in $SERVICES; do
+			$LAUNCHCTL enable "system/$s" 2>/dev/null
+			$LAUNCHCTL bootstrap system "/System/Library/LaunchDaemons/$s.plist" 2>/dev/null
+			echo "on:  $s"
+		done
+		echo "Services restored. A reboot finishes the restore."
+		;;
+	status)
+		DISABLED=$($LAUNCHCTL print-disabled system 2>/dev/null)
+		for s in $SERVICES; do
+			if echo "$DISABLED" | grep -q "\"$s\" => \(disabled\|true\)"; then
+				echo "off: $s"
+			else
+				echo "on:  $s"
+			fi
+		done
+		;;
+	*)
+		echo "Usage: sudo speedboost-services enable | disable | status"
+		exit 1
+		;;
+esac
+exit 0

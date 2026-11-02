@@ -1,0 +1,129 @@
+# Private iOS APIs used by the tweaks. One per line:
+#   <feature> <required|optional> class  <Class>
+#   <feature> <required|optional> method <Class> <-|+><selector>   (inherited methods count)
+#   <feature> <required|optional> ivar   <Class> <ivarName>
+#   <feature> <required|optional> symbol <C symbol>
+#   need can also be any:<group>/<route>: the group passes if every entry of at
+#   least one route exists (e.g. "the iOS 17-26 way" or "the iOS 27 way").
+
+# ---------- CarCast: CarPlay home screen (CarPlay process / DashBoard) ----------
+carplay-list required method FBSApplicationLibraryConfiguration -setInstalledApplicationFilter:
+carplay-list optional method FBSApplicationLibraryConfiguration -setApplicationIdentityFilter:
+carplay-list any:loadinfo/record method DBApplicationInfo -_loadFromRecord:
+carplay-list any:loadinfo/proxy  method DBApplicationInfo -_loadFromProxy:
+carplay-list required method DBApplicationInfo -carPlayDeclaration
+carplay-list required ivar   DBApplicationInfo _carPlayDeclaration
+carplay-list optional method DBApplicationInfo -isHidden
+carplay-list optional method DBApplicationInfo -isFirstParty
+carplay-list required method CRCarPlayAppDeclaration -setSupportsTemplates:
+carplay-list required method CRCarPlayAppDeclaration -setSupportsMaps:
+carplay-list required method CRCarPlayAppDeclaration -setBundleIdentifier:
+carplay-list optional method CRCarPlayAppDeclaration -setBundlePath:
+carplay-list required method CRCarPlayAppPolicyEvaluator -effectivePolicyForAppDeclaration:
+carplay-list optional method CRCarPlayAppPolicyEvaluator -effectivePolicyForAppDeclaration:inVehicleWithCertificateSerial:
+carplay-list required method CRCarPlayAppPolicy -setCarPlaySupported:
+carplay-list required method CRCarPlayAppPolicy -setCanDisplayOnCarScreen:
+carplay-list optional method CRCarPlayAppPolicy -setCarPlayCapable:
+carplay-list optional method CRCarPlayAppPolicy -setLaunchUsingTemplateUI:
+carplay-list optional method CRCarPlayAppPolicy -setLaunchUsingMusicUIService:
+carplay-list optional method CRCarPlayAppPolicy -setLaunchUsingSiri:
+carplay-list any:iconmodel/objc  method DBIconModel -isIconVisible:
+carplay-list any:iconmodel/swift method _TtC9DashBoard11DBIconModel -isIconVisible:
+carplay-list required method SBLeafIcon -applicationBundleID
+carplay-launch required method DBDashboard -handleEvent:
+carplay-launch optional method DBDashboard -_handleOpenApplicationEvent:
+carplay-launch required method DBEvent -context
+carplay-launch required class  DBApplicationLaunchInfo
+carplay-launch required method DBApplicationLaunchInfo -application
+carplay-launch any:launchapp/dbapplication method DBApplication -bundleIdentifier
+carplay-launch any:launchapp/dbappinfo method DBApplicationInfo -bundleIdentifier
+carplay-debug optional method DBApplicationController +sharedInstance
+carplay-debug optional method DBApplicationController -allApplications
+carplay-debug optional method DBApplication -appPolicy
+
+# ---------- CarCast: hosting the app (SpringBoard) ----------
+car-display required method AVExternalDevice +currentCarPlayExternalDevice
+car-display required method AVExternalDevice -screenIDs
+car-display required method CADisplay +displays
+car-display required method CADisplay -uniqueId
+car-display any:dispconf/old    method FBSDisplayConfiguration -initWithCADisplay:isMainDisplay:
+car-display any:dispconf/new    method FBSDisplayConfiguration -initWithCADisplay:
+car-display any:dispconf/uikit  method UIScreen +_carScreen
+car-display any:dispconf/uikit  method UIScreen -displayConfiguration
+car-display required method UIRootSceneWindow -initWithDisplayConfiguration:
+hosting required method SBApplicationController +sharedInstance
+hosting required method SBApplicationController -applicationWithBundleIdentifier:
+hosting any:scenemgr/coordinator method SBSceneManagerCoordinator +mainDisplaySceneManager
+hosting any:scenemgr/springboard method SpringBoard -sceneManager
+hosting any:scenemgr/windowscenemgr method SpringBoard -windowSceneManager
+hosting any:scenemgr/windowscenemgr method SBWindowSceneManager -sceneManager
+hosting required method SpringBoard -embeddedDisplayWindowScene
+hosting any:displayid/manager method SBSceneManager -displayIdentity
+hosting any:displayid/windowscene method SBWindowScene -displayIdentity
+hosting any:sceneid/manager method SBSceneManager -sceneIdentityForApplication:createPrimaryIfRequired:sceneSessionRole:
+hosting any:sceneid/switcher method SBWindowScene -switcherController
+hosting any:sceneid/switcher ivar   SBSwitcherController _sceneIdentityProvider
+hosting any:sceneid/switcher method SBLayoutStateSceneIdentityProvider -sceneIdentityForApplication:createPrimaryIfRequired:sceneSessionRole:
+hosting required method SBSceneManager -fetchOrCreateApplicationSceneHandleForRequest:
+hosting required method SBApplicationSceneHandleRequest +defaultRequestForApplication:sceneIdentity:displayIdentity:
+hosting required method SBDeviceApplicationSceneEntity -initWithApplicationSceneHandle:
+hosting required method SBAppViewController -initWithIdentifier:andApplicationSceneEntity:
+hosting required method SBAppViewController -_createSceneUpdateTransactionForApplicationSceneEntity:deliveringActions:
+hosting required method SBAppViewController -_createSceneViewController
+hosting required method SBAppViewController -appView
+hosting required method SBAppViewController -_setCurrentMode:
+hosting required method SBAppViewController -invalidate
+hosting optional method SBAppViewController -setIgnoresOcclusions:
+hosting optional method SBAppViewController -setContentReferenceSize:withContentOrientation:andContainerOrientation:
+hosting required ivar   SBAppViewController _currentMode
+hosting optional ivar   SBAppViewController _activationSettings
+hosting optional ivar   SBAppViewController _activeTransitions
+hosting optional method SBActivationSettings -clearActivationSettings
+hosting required method BSTransaction -setCompletionBlock:
+hosting required method BSTransaction -begin
+hosting required method SBApplicationSceneView +defaultDisplayModeAnimationFactory
+hosting required method SBSceneView -setDisplayMode:animationFactory:completion:
+hosting required method SBSceneHandle -sceneIdentifier
+hosting required method SBSceneHandle -sceneIfExists
+hosting optional method FBSceneMonitor -initWithSceneID:
+hosting optional method FBSceneMonitor -setDelegate:
+hosting required method SBApplication -info
+hosting required method FBSBundleInfo -bundleURL
+scene-size required method FBScene -updateSettingsWithBlock:
+scene-size required method FBScene -settings
+keep-alive optional method FBScene -clientProcess
+keep-alive optional method FBScene -updateSettings:withTransitionContext:completion:
+keep-alive optional method FBProcess -bundleIdentifier
+keep-alive any:lock/manager   method SBSuspendedUnderLockManager -_shouldBeBackgroundUnderLockForScene:withSettings:
+keep-alive any:lock/component method SBSuspendedUnderLockHostComponent -_shouldBeUnderLock
+keep-alive optional symbol BKSDisplayServicesSetScreenBlanked
+ipad-layout required method FBProcessManager +sharedInstance
+ipad-layout required method FBProcessManager -processesForBundleIdentifier:
+ipad-layout required method FBProcess -pid
+springboard required method SpringBoard -applicationDidFinishLaunching:
+springboard optional method SpringBoard -_accessibilityFrontMostApplication
+springboard optional method SpringBoard -isLocked
+test-helpers optional symbol _UICreateScreenUIImage
+test-helpers optional symbol BKSHIDServicesGetBacklightFactor
+test-helpers optional method SBBacklightController -turnOnScreenFullyWithBacklightSource:
+test-helpers optional method SBLockScreenManager -unlockUIFromSource:withOptions:
+
+# ---------- CarCast: inside apps ----------
+app-side optional method UIWindow -_setRotatableViewOrientation:duration:force:
+app-side optional method UIWindowScene -traitOverrides
+
+# ---------- LineFix (SpringBoard overlay window) ----------
+linefix optional method UIWindow -_ignoresHitTest
+linefix optional method UIWindow -_shouldCreateContextAsSecure
+
+# ---------- SpeedBoost ----------
+speedboost optional symbol _AXSEnhanceBackgroundContrastEnabled
+speedboost optional symbol _AXSSetEnhanceBackgroundContrastEnabled
+speedboost optional symbol _AXSReduceMotionEnabled
+speedboost optional symbol _AXSSetReduceMotionEnabled
+
+# ---------- XS Tweaks app ----------
+xstweaks required method PSListController -loadSpecifiersFromPlistName:target:bundle:
+xstweaks optional method LSApplicationWorkspace +defaultWorkspace
+xstweaks optional method LSApplicationWorkspace -allInstalledApplications
+xstweaks optional method UIImage +_applicationIconImageForBundleIdentifier:format:scale:

@@ -1,0 +1,11 @@
+CarCast
+Copyright 2026 Yasin
+
+This product is based on carplay-cast by Ethan Arbuckle
+(https://github.com/EthanArbuckle/carplay-cast), licensed under the
+Apache License, Version 2.0 (see LICENSE).
+
+Changes from carplay-cast: ported to iOS 17-27 (renamed DashBoard classes,
+new app-library filters, new SpringBoard scene APIs), rootless packaging,
+car-screen-sized app windows with dynamic sizing, iPad layout mode, and a
+phone test mode.

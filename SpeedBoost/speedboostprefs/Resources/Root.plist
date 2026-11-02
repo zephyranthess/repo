@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>SpeedBoost</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key><string>PSGroupCell</string>
+			<key>label</key><string>Faster animations</string>
+			<key>footerText</key><string>Speeds up home screen animations: opening/closing apps, app switcher, folders, Control Center, notifications. 1.0 = normal, 1.6 = recommended, 2.5+ = very fast. Changes apply instantly.</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>label</key><string>Enabled</string>
+			<key>key</key><string>enabled</string>
+			<key>default</key><true/>
+			<key>defaults</key><string>com.yasin.speedboost</string>
+			<key>PostNotification</key><string>com.yasin.speedboost/changed</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSliderCell</string>
+			<key>label</key><string>Speed</string>
+			<key>key</key><string>speed</string>
+			<key>default</key><real>1.6</real>
+			<key>min</key><real>1.0</real>
+			<key>max</key><real>3.0</real>
+			<key>showValue</key><true/>
+			<key>isSegmented</key><true/>
+			<key>segmentCount</key><integer>20</integer>
+			<key>defaults</key><string>com.yasin.speedboost</string>
+			<key>PostNotification</key><string>com.yasin.speedboost/changed</string>
+		</dict>
+
+		<dict>
+			<key>cell</key><string>PSGroupCell</string>
+			<key>label</key><string>Lighter graphics</string>
+			<key>footerText</key><string>Reduce Transparency removes the blur effects (biggest GPU saving, recommended). Reduce Motion replaces zoom animations with simple fades. These are the same switches as in Settings › Accessibility.</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>label</key><string>Reduce Transparency (no blur)</string>
+			<key>get</key><string>reduceTransparency:</string>
+			<key>set</key><string>setReduceTransparency:specifier:</string>
+		</dict>
+		<dict>
+			<key>cell</key><string>PSSwitchCell</string>
+			<key>label</key><string>Reduce Motion</string>
+			<key>get</key><string>reduceMotion:</string>
+			<key>set</key><string>setReduceMotion:specifier:</string>
+		</dict>
+
+		<dict>
+			<key>cell</key><string>PSGroupCell</string>
+			<key>label</key><string>Background services</string>
+			<key>footerText</key><string>When installed, SpeedBoost turns off: Photos analysis (photoanalysisd, mediaanalysisd), iOS update downloads (softwareupdated, softwareupdateservicesd), analytics (analyticsd, geo/wifi/input analytics) and Tips. Uninstalling SpeedBoost turns them all back on.
+Manual control over SSH: sudo speedboost-services enable | disable | status</string>
+		</dict>
+	</array>
+</dict>
+</plist>

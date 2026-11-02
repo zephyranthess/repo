@@ -1,0 +1,6 @@
+#!/var/jb/bin/sh
+# Turn the services back on when SpeedBoost is removed (not on upgrade).
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+	/var/jb/usr/bin/speedboost-services enable >/dev/null 2>&1
+fi
+exit 0

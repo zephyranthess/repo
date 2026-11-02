@@ -1,0 +1,16 @@
+Origin: Yasin's Tweaks
+Label: Yasin's Tweaks
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64
+Components: main
+Description: CarCast (any app on CarPlay), LineFix, SpeedBoost and the XS Tweaks settings app.
+MD5Sum:
+ 23b16f5315a85670da6d2a5f459eb910 2353 Packages
+ 5dd9b77b11346c299a36434cad272ee0 1173 Packages.bz2
+ 418ba6f71822c8092b2bd3cf68c66689 1058 Packages.gz
+SHA256:
+ 4c6861b65c4e6714200f1115f876ee8b4001fb351e891f8eea810c1cfb53f6fe 2353 Packages
+ 72b2bfceaf70233b188ab5c7e96ee912b78637e60793b35870737bc108b6be8b 1173 Packages.bz2
+ b067b3592231c39202a85f6337e44996f71475fbf3fe15feb1ce7c8617540c7e 1058 Packages.gz
