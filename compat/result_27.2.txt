@@ -86,6 +86,16 @@ ok        optional speedboost      symbol _AXSSetReduceMotionEnabled
 ok        required settings-apps   PSListController -loadSpecifiersFromPlistName:target:bundle:
 ok        optional settings-apps   LSApplicationWorkspace +defaultWorkspace
 ok        optional settings-apps   LSApplicationWorkspace -allInstalledApplications
+ok        required tidy            LSApplicationWorkspace +defaultWorkspace
+ok        required tidy            LSApplicationWorkspace -allInstalledApplications
+ok        required tidy            LSApplicationProxy -dataContainerURL
+ok        optional tidy            LSApplicationProxy -groupContainerURLs
+ok        optional tidy            LSApplicationProxy -applicationType
+ok        optional tidy            LSApplicationWorkspace -openApplicationWithBundleID:
+ok        required tidy-springboard FBProcessManager -processesForBundleIdentifier:
+ok        required tidy-springboard FBProcess -pid
+ok        optional tidy-springboard SBMediaController -nowPlayingApplication
+MISSING   optional tidy-springboard SpringBoard -_accessibilityFrontMostApplication
 ok        required carplay-list    loadinfo via record, proxy
 ok        required carplay-list    iconmodel via swift
 ok        required carplay-launch  launchapp via dbapplication, dbappinfo

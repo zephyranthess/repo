@@ -14,7 +14,7 @@ Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
-Description: CarCast (any app on CarPlay), LineFix and SpeedBoost.
+Description: CarCast (any app on CarPlay), Tidy (storage & memory cleaner), LineFix and SpeedBoost.
 REL
 {
 	echo "MD5Sum:"

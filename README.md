@@ -5,6 +5,7 @@ Tweaks for rootless jailbreaks (such as Dopamine). Each tweak comes with its own
 | Package | What it does | Installs on |
 |---|---|---|
 | [**CarCast**](#carcast) | Run any app on CarPlay, with per-app settings and iPad layouts (e.g. a YouTube video grid). | iOS 17+ |
+| [**Tidy**](#tidy) | Storage and memory cleaner with a visual overview, Android-style per-app Clear cache / Clear data, a large file finder and auto-clean. | iOS 15+ |
 | [**LineFix**](#linefix) | Makes a broken vertical screen line (the green/pink line some OLED iPhones develop) much less visible. | iOS 15+ |
 | [**SpeedBoost**](#speedboost) | Faster home screen animations and fewer heavy background services. | iOS 15+ |
 
@@ -14,7 +15,7 @@ Tweaks for rootless jailbreaks (such as Dopamine). Each tweak comes with its own
 2. Tap **+** (top right).
 3. Enter `https://zephyranthess.github.io/repo/` and tap **Add Source**.
 4. Open the **zephyra** source and install what you want.
-5. Tap **Respring** when Sileo asks. Each tweak adds its own app to the home screen (**CarCast**, **LineFix**, **SpeedBoost**) with its settings.
+5. Tap **Respring** when Sileo asks. Each tweak adds its own app to the home screen (**CarCast**, **Tidy**, **LineFix**, **SpeedBoost**).
 
 You can also download the `.deb` files from [`docs/debs/`](docs/debs) and open them with Sileo or Filza.
 
@@ -68,6 +69,22 @@ Open an [issue](../../issues) with your device, iOS version and jailbreak, and a
 - `/var/mobile/Library/Logs/CarCast-CarPlay.log` (or `/var/tmp/CarCast-CarPlay.log`)
 
 ---
+
+## Tidy
+
+A storage and memory cleaner that shows what is using space and only removes what is safe to remove. Nothing is deleted without showing you first.
+
+- **Overview:** free space with a bar split into apps, app data, photos, messages & WhatsApp, iOS & system, and free. Available memory with a bar (apps, iOS & system, compressed, cached, free), the memory pressure level, and the five processes using the most memory.
+- **Clean:** one-tap cleaning of App caches, Safari & web cache, System caches (maps, file previews, search), App switcher screenshots, Temporary files (older than a day) and Crash reports & logs. Each item shows its size and an explanation and can be switched off. AI model cache is available but off by default.
+- **Apps:** every app with its size split into app / data / cache. Per app: **Clear Cache**, **Clear All Data** (user apps only; resets the app as if newly installed), protect its cache, open the app, and see its biggest folders.
+- **Files:** finds the biggest files (over 20 MB). Files in safe locations (app documents, caches, downloads, chat media) can be deleted; databases and other files apps depend on can only be opened in Filza.
+- **Auto-clean:** off, weekly, or when free space drops below a limit (default 5 GB, checked every 3 hours). Uses the items switched on in the Clean tab and never touches your files or app data.
+- **Protected apps:** their caches are never cleaned automatically. Spotify, Netflix, YouTube and other apps that may keep offline downloads in their cache are protected by default.
+- **WhatsApp media cleaner (off by default):** media size per chat, split into photos, videos, voice, documents and stickers. Deletes chosen kinds of media older than a chosen age, from all or chosen chats, after showing how many files match. Messages are kept; chat names are read on the phone from WhatsApp's database without changing it. It also shows when WhatsApp was last used, so leftover media from a signed-out account is easy to spot.
+
+About memory: iOS frees memory by itself whenever an app needs it, so Tidy doesn't "clean RAM" automatically. **Close Background Apps** is there for when the phone feels stuck; it keeps the music app that is playing, Phone, and navigation apps.
+
+Tested on iOS 18.1.1. The private iOS APIs it uses were checked against iOS 17.7, 18.6.2, 26.6.2 and 27.2.
 
 ## LineFix
 

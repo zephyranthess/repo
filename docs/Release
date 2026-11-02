@@ -5,12 +5,12 @@ Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
-Description: CarCast (any app on CarPlay), LineFix and SpeedBoost.
+Description: CarCast (any app on CarPlay), Tidy (storage & memory cleaner), LineFix and SpeedBoost.
 MD5Sum:
- 956028e56bb94ffe9ff24230cfba8378 1908 Packages
- 84afc09eb243cccb7a58d799450f5e0b 983 Packages.bz2
- 82b644db5c46472ea4daf24ac8602c6d 878 Packages.gz
+ b2bd08047886a59332b7e109061feaf9 2538 Packages
+ ab6a8a52c755e10bad3efda92f6742c0 1239 Packages.bz2
+ 85b43865ce30283e3a1d3eb9d1da7d79 1121 Packages.gz
 SHA256:
- 292bc1e9e08550ac568e4d18b5153780d07286b308c093184e74039fd7ce5ebf 1908 Packages
- 2f95130134a704726c79eeb4a4a2014eb4858ad986b3d4a7d2d9b8146ec9684f 983 Packages.bz2
- 041bb1dcf9e4a26aea159f090e3843a185822c88c6e4f0160f2f75c46ab8994d 878 Packages.gz
+ a2b2eb072f4152b04be3e5fb341b9daad637b008ded0b12c1e6ba9541df3df0f 2538 Packages
+ 1f209620199cdc0733cd928b8f44300d3551049a395c1cb48da745bc984195df 1239 Packages.bz2
+ 121128d8d9a81d52dbca188053db2a2a6d468d641ff36c7bb973d0b7bfcb045d 1121 Packages.gz

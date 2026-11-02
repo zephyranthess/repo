@@ -1,0 +1,9 @@
+Package: com.yasin.tidy
+Name: Tidy
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Storage and memory cleaner with a visual overview: safe one-tap cleaning, per-app clear cache / clear data, large file finder, auto-clean and an optional WhatsApp media cleaner.
+Maintainer: Yasin
+Author: Yasin
+Section: Utilities
+Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000)

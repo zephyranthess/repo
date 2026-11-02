@@ -52,3 +52,19 @@ Description: Faster SpringBoard animations, no-blur switch, and turns off heavy 
 Author: Yasin
 Name: SpeedBoost
 
+Package: com.yasin.tidy
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: Yasin
+Installed-Size: 684
+Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000)
+Filename: debs/com.yasin.tidy_1.0.0_iphoneos-arm64.deb
+Size: 107060
+MD5sum: 5e9500e684c1ccebff62e81fd03775cf
+SHA1: 2f3d507e59f361091371f58d4537eb375e6bb02e
+SHA256: f436da114e555a0e51b54911d522712ced42e12624230f74b5e9b86e8fd5c735
+Section: Utilities
+Description: Storage and memory cleaner with a visual overview: safe one-tap cleaning, per-app clear cache / clear data, large file finder, auto-clean and an optional WhatsApp media cleaner.
+Author: Yasin
+Name: Tidy
+

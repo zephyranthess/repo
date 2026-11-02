@@ -1,0 +1,3 @@
+#!/var/jb/bin/sh
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then /var/jb/usr/bin/uicache -u /var/jb/Applications/Tidy.app >/dev/null 2>&1; fi
+exit 0

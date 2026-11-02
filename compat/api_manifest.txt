@@ -126,3 +126,15 @@ speedboost optional symbol _AXSSetReduceMotionEnabled
 settings-apps required method PSListController -loadSpecifiersFromPlistName:target:bundle:
 settings-apps optional method LSApplicationWorkspace +defaultWorkspace
 settings-apps optional method LSApplicationWorkspace -allInstalledApplications
+
+# ---------- Tidy ----------
+tidy required method LSApplicationWorkspace +defaultWorkspace
+tidy required method LSApplicationWorkspace -allInstalledApplications
+tidy required method LSApplicationProxy -dataContainerURL
+tidy optional method LSApplicationProxy -groupContainerURLs
+tidy optional method LSApplicationProxy -applicationType
+tidy optional method LSApplicationWorkspace -openApplicationWithBundleID:
+tidy-springboard required method FBProcessManager -processesForBundleIdentifier:
+tidy-springboard required method FBProcess -pid
+tidy-springboard optional method SBMediaController -nowPlayingApplication
+tidy-springboard optional method SpringBoard -_accessibilityFrontMostApplication
