@@ -1,10 +1,11 @@
 Package: com.yasin.carcast
 Name: CarCast
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm64
 Description: Run any app on CarPlay, with iPad layouts (e.g. YouTube video grid). For iOS 17-27, rootless. Based on carplay-cast by Ethan Arbuckle (Apache-2.0).
 Maintainer: Yasin
 Author: Yasin
 Section: Tweaks
 Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000)
-Recommends: com.yasin.xstweaks
+Conflicts: com.yasin.xstweaks
+Replaces: com.yasin.xstweaks

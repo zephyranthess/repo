@@ -1,3 +1,4 @@
 #!/var/jb/bin/sh
 /var/jb/usr/bin/speedboost-services disable >/dev/null 2>&1
+/var/jb/usr/bin/uicache -p /var/jb/Applications/SpeedBoostSettings.app >/dev/null 2>&1
 exit 0

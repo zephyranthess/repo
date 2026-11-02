@@ -1,10 +1,11 @@
 Package: com.yasin.speedboost
 Name: SpeedBoost
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm64
 Description: Faster SpringBoard animations, no-blur switch, and turns off heavy background services (photo analysis, update downloads, analytics).
 Maintainer: Yasin
 Author: Yasin
 Section: Tweaks
 Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000)
-Recommends: com.yasin.xstweaks
+Conflicts: com.yasin.xstweaks
+Replaces: com.yasin.xstweaks

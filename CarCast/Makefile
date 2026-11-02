@@ -12,3 +12,6 @@ CarCast_CFLAGS = -fobjc-arc -DCC_DEBUG=$(CC_DEBUG) -Wno-unused-function -Wno-dep
 CarCast_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+
+SUBPROJECTS += app
+include $(THEOS_MAKE_PATH)/aggregate.mk

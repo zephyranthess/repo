@@ -83,10 +83,9 @@ ok        optional speedboost      symbol _AXSEnhanceBackgroundContrastEnabled
 ok        optional speedboost      symbol _AXSSetEnhanceBackgroundContrastEnabled
 ok        optional speedboost      symbol _AXSReduceMotionEnabled
 ok        optional speedboost      symbol _AXSSetReduceMotionEnabled
-ok        required xstweaks        PSListController -loadSpecifiersFromPlistName:target:bundle:
-ok        optional xstweaks        LSApplicationWorkspace +defaultWorkspace
-ok        optional xstweaks        LSApplicationWorkspace -allInstalledApplications
-ok        optional xstweaks        UIImage +_applicationIconImageForBundleIdentifier:format:scale:
+ok        required settings-apps   PSListController -loadSpecifiersFromPlistName:target:bundle:
+ok        optional settings-apps   LSApplicationWorkspace +defaultWorkspace
+ok        optional settings-apps   LSApplicationWorkspace -allInstalledApplications
 ok        required carplay-list    loadinfo via record, proxy
 ok        required carplay-list    iconmodel via objc
 ok        required carplay-launch  launchapp via dbappinfo

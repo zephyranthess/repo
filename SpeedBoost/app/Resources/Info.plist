@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key><string>en</string>
-	<key>CFBundleDisplayName</key><string>XS Tweaks</string>
-	<key>CFBundleExecutable</key><string>XSTweaks</string>
-	<key>CFBundleIdentifier</key><string>com.yasin.xstweaks</string>
+	<key>CFBundleDisplayName</key><string>SpeedBoost</string>
+	<key>CFBundleExecutable</key><string>SpeedBoostSettings</string>
+	<key>CFBundleIdentifier</key><string>com.yasin.speedboost.settings</string>
 	<key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
-	<key>CFBundleName</key><string>XSTweaks</string>
+	<key>CFBundleName</key><string>SpeedBoostSettings</string>
 	<key>CFBundlePackageType</key><string>APPL</string>
 	<key>CFBundleShortVersionString</key><string>1.0</string>
 	<key>CFBundleVersion</key><string>1</string>

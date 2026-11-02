@@ -7,14 +7,14 @@ dpkg-scanpackages -m debs /dev/null > Packages 2>/dev/null
 bzip2 -kf Packages
 gzip -kf Packages
 cat > Release <<'REL'
-Origin: Yasin's Tweaks
-Label: Yasin's Tweaks
+Origin: zephyra
+Label: zephyra
 Suite: stable
 Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm64
 Components: main
-Description: CarCast (any app on CarPlay), LineFix, SpeedBoost and the XS Tweaks settings app.
+Description: CarCast (any app on CarPlay), LineFix and SpeedBoost.
 REL
 {
 	echo "MD5Sum:"

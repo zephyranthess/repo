@@ -1,11 +1,10 @@
-# Yasin's Tweaks
+# zephyra
 
-Tweaks for rootless jailbreaks (such as Dopamine). Settings live in the **XS Tweaks** app on the home screen, because PreferenceLoader (2.2.8) doesn't load into the iOS 18 Settings app.
+Tweaks for rootless jailbreaks (such as Dopamine). Each tweak comes with its own settings app on the home screen, because PreferenceLoader (2.2.8) doesn't load into the iOS 18 Settings app.
 
 | Package | What it does | Installs on |
 |---|---|---|
 | [**CarCast**](#carcast) | Run any app on CarPlay, with per-app settings and iPad layouts (e.g. a YouTube video grid). | iOS 17+ |
-| [**XS Tweaks**](#xs-tweaks) | Settings app for CarCast, LineFix and SpeedBoost. Shows pages only for the tweaks you have installed. | iOS 15+ |
 | [**LineFix**](#linefix) | Makes a broken vertical screen line (the green/pink line some OLED iPhones develop) much less visible. | iOS 15+ |
 | [**SpeedBoost**](#speedboost) | Faster home screen animations and fewer heavy background services. | iOS 15+ |
 
@@ -14,8 +13,8 @@ Tweaks for rootless jailbreaks (such as Dopamine). Settings live in the **XS Twe
 1. Open **Sileo** and go to the **Sources** tab.
 2. Tap **+** (top right).
 3. Enter `https://zephyranthess.github.io/repo/` and tap **Add Source**.
-4. Open the **Yasin's Tweaks** source and install what you want. Install **XS Tweaks** too, to get the settings.
-5. Tap **Respring** when Sileo asks.
+4. Open the **zephyra** source and install what you want.
+5. Tap **Respring** when Sileo asks. Each tweak adds its own app to the home screen (**CarCast**, **LineFix**, **SpeedBoost**) with its settings.
 
 You can also download the `.deb` files from [`docs/debs/`](docs/debs) and open them with Sileo or Filza.
 
@@ -30,7 +29,7 @@ Shows your apps on the CarPlay home screen and runs them on the car's display.
 - A side dock on the car screen has a **home** button (closes the app), a button to switch between the **car-shaped and phone-shaped** layout, and, in the phone-shaped layout, a **fit / fill** button.
 - Apps that already have their own CarPlay version (Spotify, WhatsApp, YouTube Music…) are left alone.
 
-### Settings (XS Tweaks → CarCast)
+### Settings (CarCast app)
 
 | Setting | Options |
 |---|---|
@@ -70,21 +69,18 @@ Open an [issue](../../issues) with your device, iOS version and jailbreak, and a
 
 ---
 
-## XS Tweaks
-
-A home screen app with the settings pages for the other tweaks. Needed because PreferenceLoader (2.2.8) doesn't load into the iOS 18 Settings app, so tweak pages don't appear there. Tested on iOS 18.1.1.
-
 ## LineFix
 
 Draws a thin strip, always on top, over a broken pixel column and lets you tune its color so the line blends in. A broken column can't be repaired in software; the goal is a faint neutral line instead of a bright green or pink one.
 
-1. XS Tweaks → LineFix. With **Find mode** on, a red strip appears. Move it with the buttons until it covers the line (it turns yellow when it sits exactly on a green line).
+1. Open the **LineFix** app. With **Find mode** on, a red strip appears. Move it with the buttons until it covers the line (it turns yellow when it sits exactly on a green line).
 2. Turn **Find mode** off and raise **Red** and **Blue** together until the line looks neutral grey on both dark and white screens.
 
 The strip also appears in screenshots. Tested on iOS 18.1.1.
 
 ## SpeedBoost
 
+- Settings are in the **SpeedBoost** app.
 - Speeds up home screen animations (app open/close, app switcher, folders, Control Center). Adjustable from 1.0× to 3.0× (default 1.6×). Animations inside apps are unchanged.
 - Switches for Reduce Transparency (no blur) and Reduce Motion, the same as in Settings › Accessibility.
 - On install, turns off these background services: Photos analysis (`photoanalysisd`, `mediaanalysisd`), iOS update downloads (`softwareupdated`, `softwareupdateservicesd`), analytics (`analyticsd`, `geoanalyticsd`, `wifianalyticsd`, `inputanalyticsd`) and Tips (`tipsd`). Uninstalling SpeedBoost turns them back on. Manual control over SSH: `sudo speedboost-services enable | disable | status`.
@@ -98,10 +94,11 @@ Side effects: Settings › General › Software Update won't load, and Photos st
 Requires macOS with Xcode, [Theos](https://theos.dev) (with the iOS 16.5 SDK from [theos/sdks](https://github.com/theos/sdks)), `ldid` and `dpkg`.
 
 ```sh
-cd CarCast && make package FINALPACKAGE=1    # same for LineFix, SpeedBoost, XSTweaksApp
+cd CarCast && make package FINALPACKAGE=1    # same for LineFix and SpeedBoost
 ```
 
 - `make package FINALPACKAGE=1 CC_DEBUG=1` builds CarCast with test helpers for [`CarCast/tools/carcastctl.m`](CarCast/tools/carcastctl.m) (`launch`, `close`, `snapshot`, `wake`, `cpdebug` over SSH). Don't ship debug builds.
+- Each package builds its settings app from `<tweak>/app/` and the shared code in [`shared/SettingsApp/`](shared/SettingsApp).
 - `scripts/update-repo.sh` regenerates the Sileo index in `docs/` after you put new `.deb` files in `docs/debs/`.
 
 ### Checking a new iOS version

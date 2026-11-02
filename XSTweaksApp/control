@@ -1,9 +1,0 @@
-Package: com.yasin.xstweaks
-Name: XS Tweaks
-Version: 1.4.1
-Architecture: iphoneos-arm64
-Description: Settings app for LineFix, SpeedBoost and CarCast (iOS 18+ Settings no longer shows tweak pages).
-Maintainer: Yasin
-Author: Yasin
-Section: Utilities
-Depends: firmware (>= 15.0)

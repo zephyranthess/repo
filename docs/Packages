@@ -1,67 +1,54 @@
 Package: com.yasin.carcast
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm64
 Maintainer: Yasin
-Installed-Size: 288
+Installed-Size: 512
 Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000)
-Recommends: com.yasin.xstweaks
-Filename: debs/com.yasin.carcast_1.1.0_iphoneos-arm64.deb
-Size: 45384
-MD5sum: 61c93986bc2b376531536ea20f69cc75
-SHA1: 42791860a7da37c6c6898e59b90b56cf95c5864a
-SHA256: 7fb04f6a0776340482139d122363f82be5a2a7696c833c81be0a3e81e44c318c
+Conflicts: com.yasin.xstweaks
+Replaces: com.yasin.xstweaks
+Filename: debs/com.yasin.carcast_1.2.0_iphoneos-arm64.deb
+Size: 79858
+MD5sum: bf3d297d33a3429b6b5e73ce164a0328
+SHA1: c99fb08253498e98917994d78ee66dfaea5da72a
+SHA256: c210cb97781828fd97b282c39d1996115c7ba8d091d8509d4cb958a78f905ac3
 Section: Tweaks
 Description: Run any app on CarPlay, with iPad layouts (e.g. YouTube video grid). For iOS 17-27, rootless. Based on carplay-cast by Ethan Arbuckle (Apache-2.0).
 Author: Yasin
 Name: CarCast
 
 Package: com.yasin.linefix
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm64
 Maintainer: Yasin
-Installed-Size: 352
+Installed-Size: 544
 Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000)
-Recommends: com.yasin.xstweaks
-Filename: debs/com.yasin.linefix_1.1.0_iphoneos-arm64.deb
-Size: 10472
-MD5sum: 12cb9262b0090a7b5da215620ce8ceb5
-SHA1: 0f8fd1d840fb6f4bdb3b2fedf954122bddfbae24
-SHA256: b69656827c27457571a1f1ae415bac893bac24e4568b3c82f09e849c14d56468
+Conflicts: com.yasin.xstweaks
+Replaces: com.yasin.xstweaks
+Filename: debs/com.yasin.linefix_1.2.0_iphoneos-arm64.deb
+Size: 33104
+MD5sum: 47513ec6fb74b565207830b49cfa6c22
+SHA1: 9e5834f4df3a08f07922a908ec9628e7a60cd349
+SHA256: ea5468b6f88dddcfdec7b67e26ceb490606a2b0ee3bb06bba5890843327b378e
 Section: Tweaks
 Description: Hides a broken screen column (green/pink line) with a tunable strip.
 Author: Yasin
 Name: LineFix
 
 Package: com.yasin.speedboost
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm64
 Maintainer: Yasin
-Installed-Size: 348
+Installed-Size: 540
 Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000)
-Recommends: com.yasin.xstweaks
-Filename: debs/com.yasin.speedboost_1.1.0_iphoneos-arm64.deb
-Size: 8618
-MD5sum: 70d8784b5007dd1b1d16ec0be397e9e1
-SHA1: 9fcf35913a78c5160cd9ace1696207d7d089043f
-SHA256: 629085cd3a33fe258e2b5febb4f655af5e794954c8b80bfd1354fe280df31b3e
+Conflicts: com.yasin.xstweaks
+Replaces: com.yasin.xstweaks
+Filename: debs/com.yasin.speedboost_1.2.0_iphoneos-arm64.deb
+Size: 29672
+MD5sum: 1c6d2d4111b0120901285ec96715d831
+SHA1: b9f9744f81ed28349797cc6b30a21f7ea975a811
+SHA256: 1230011b0ee27e8e75ef81fcda34196721824da4a0eaf445725a986135d3da98
 Section: Tweaks
 Description: Faster SpringBoard animations, no-blur switch, and turns off heavy background services (photo analysis, update downloads, analytics).
 Author: Yasin
 Name: SpeedBoost
-
-Package: com.yasin.xstweaks
-Version: 1.4.1
-Architecture: iphoneos-arm64
-Maintainer: Yasin
-Installed-Size: 228
-Depends: firmware (>= 15.0)
-Filename: debs/com.yasin.xstweaks_1.4.1_iphoneos-arm64.deb
-Size: 36180
-MD5sum: fa5252cc7bdb1bb9c56eb8941114f5ae
-SHA1: 7708a06b6211629468fa65f12d554ba4b30c4019
-SHA256: 255d47657f0a435706b9f568f13ae9b7d33455e7c0b0de5e3232edb638d1ec0d
-Section: Utilities
-Description: Settings app for LineFix, SpeedBoost and CarCast (iOS 18+ Settings no longer shows tweak pages).
-Author: Yasin
-Name: XS Tweaks
 

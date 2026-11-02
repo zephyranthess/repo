@@ -13,4 +13,5 @@ SpeedBoost_FRAMEWORKS = QuartzCore
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 SUBPROJECTS += speedboostprefs
+SUBPROJECTS += app
 include $(THEOS_MAKE_PATH)/aggregate.mk

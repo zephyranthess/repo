@@ -12,4 +12,5 @@ LineFix_CFLAGS = -fobjc-arc
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 SUBPROJECTS += linefixprefs
+SUBPROJECTS += app
 include $(THEOS_MAKE_PATH)/aggregate.mk

@@ -122,8 +122,7 @@ speedboost optional symbol _AXSSetEnhanceBackgroundContrastEnabled
 speedboost optional symbol _AXSReduceMotionEnabled
 speedboost optional symbol _AXSSetReduceMotionEnabled
 
-# ---------- XS Tweaks app ----------
-xstweaks required method PSListController -loadSpecifiersFromPlistName:target:bundle:
-xstweaks optional method LSApplicationWorkspace +defaultWorkspace
-xstweaks optional method LSApplicationWorkspace -allInstalledApplications
-xstweaks optional method UIImage +_applicationIconImageForBundleIdentifier:format:scale:
+# ---------- Settings apps (one per tweak) ----------
+settings-apps required method PSListController -loadSpecifiersFromPlistName:target:bundle:
+settings-apps optional method LSApplicationWorkspace +defaultWorkspace
+settings-apps optional method LSApplicationWorkspace -allInstalledApplications

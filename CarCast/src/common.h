@@ -74,7 +74,7 @@ static inline void CCSetIvarInteger(id obj, NSString *name, long long value) {
 	}
 }
 
-// ---------- User settings (written by the XS Tweaks app) ----------
+// ---------- User settings (written by the CarCast app) ----------
 // Stored in the jailbreak's preferences folder so every process (SpringBoard,
 // CarPlay, apps) can read it.
 #define kCCSettingsPath @"/var/jb/var/mobile/Library/Preferences/com.yasin.carcast.plist"
@@ -129,11 +129,11 @@ static inline CGFloat CCMaxAppHeight(void) {
 // Apps that should never be offered on CarPlay.
 static inline BOOL CCIsExcludedBundleID(NSString *bundleID) {
 	if (!bundleID.length) return YES;
-	if ([bundleID hasPrefix:@"com.apple."] || [bundleID hasPrefix:@"com.opa334."]) return YES;
+	if ([bundleID hasPrefix:@"com.apple."] || [bundleID hasPrefix:@"com.opa334."] || [bundleID hasPrefix:@"com.yasin."]) return YES;
 	static NSSet *excluded;
 	static dispatch_once_t once;
 	dispatch_once(&once, ^{
-		excluded = [NSSet setWithArray:@[@"org.coolstar.SileoStore", @"com.yasin.xstweaks"]];
+		excluded = [NSSet setWithArray:@[@"org.coolstar.SileoStore"]];
 	});
 	return [excluded containsObject:bundleID];
 }

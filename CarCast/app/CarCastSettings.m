@@ -1,4 +1,4 @@
-// CarCast settings pages for the XS Tweaks app.
+// Settings pages of the CarCast app.
 // Settings are saved to a plist that SpringBoard, the CarPlay process and apps can read.
 
 #import <UIKit/UIKit.h>
