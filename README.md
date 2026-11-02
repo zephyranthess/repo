@@ -13,7 +13,7 @@ Tweaks for rootless jailbreaks (such as Dopamine). Settings live in the **XS Twe
 
 1. Open **Sileo** and go to the **Sources** tab.
 2. Tap **+** (top right).
-3. Enter `https://zephyranthess.github.io/yasin-tweaks/` and tap **Add Source**.
+3. Enter `https://zephyranthess.github.io/repo/` and tap **Add Source**.
 4. Open the **Yasin's Tweaks** source and install what you want. Install **XS Tweaks** too, to get the settings.
 5. Tap **Respring** when Sileo asks.
 
