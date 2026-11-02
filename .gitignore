@@ -4,3 +4,4 @@ packages/
 !docs/debs/*.deb
 .DS_Store
 _fw/
+*.stamp
